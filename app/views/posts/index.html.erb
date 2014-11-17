@@ -1,10 +1,10 @@
 <%= link_to "Submit a new text post", new_post_path %> 
 
 <div>
-<% @posts.each do |p| %>
-  <p><%= p.title %></p>
-  <p><%= p.text %></p>
-  <p>By: <%= p.user_id %></p>
-<% end %>
+  <% @posts.each do |p| %>
+    <p><%= p.title %></p>
+    <p><%= p.text %></p>
+    <p>By: <%= p.user_id %></p>
+  <% end %>
 </div>
 
