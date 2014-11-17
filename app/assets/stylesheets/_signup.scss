@@ -1,0 +1,34 @@
+.sign-up-container {
+  clear: both;
+  margin: 0 auto;
+  padding-top: 2em;
+  text-align: center;
+  width: 20em;
+}
+
+.header-logo {
+  color: $blue;
+  float: left;
+  font-size: 3em;
+  letter-spacing: .1em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.signed-in {
+  float: right;
+  margin-top: 1.5em;
+  text-transform: uppercase;
+
+  a {
+    padding-right: 1.5em;
+  }
+
+  a:last-child {
+    padding-right: 0;
+  }
+}
+
+.sign-in-button {
+  padding-top: 1.5em;
+}
