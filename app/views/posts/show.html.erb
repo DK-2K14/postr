@@ -1,5 +1,5 @@
 <%= @post.title %>
 <%= @post.text %>
 <p>By: <%= @post.user.username %></p>
-
+<p>Posted <%= time_ago_in_words(@post.created_at) ago. %></p>
 <%= link_to "See All Posts", root_path %>
