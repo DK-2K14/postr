@@ -1,4 +1,6 @@
-<%= link_to "Submit a new text post", new_post_path %> 
+<% if signed_in? %>
+  <%= link_to "Submit a new text post", new_post_path %> 
+<% end %>
 
 <div>
   <% @posts.each do |p| %>

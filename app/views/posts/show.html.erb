@@ -1,5 +1,5 @@
 <%= @post.title %>
 <%= @post.text %>
-<p>By: <%= @post.user_id %></p>
+<p>By: <%= @post.user.username %></p>
 
 <%= link_to "See All Posts", root_path %>
