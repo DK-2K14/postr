@@ -1,28 +1,14 @@
 <%= form_for :session, url: session_path do |form| %>
-<<<<<<< HEAD
   <div class="sign-up-container">
     <div>
-      <%= form.label :email %>
-      <%= form.email_field :email %>
+      <%= form.label :username %>
+      <%= form.text_field :username %>
     </div>
     <div>
       <%= form.label :password %>
       <%= form.password_field :password %>
     </div>
-    <div class="sign-in-button">
+    <div>
       <%= form.submit "Sign in" %>
     </div>
-=======
-  <div>
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-  </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  <div>
-    <%= form.submit "Sign in" %>
->>>>>>> adding username to signin
-  </div>
 <% end %>
