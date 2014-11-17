@@ -4,7 +4,9 @@ input[type="submit"] {
   @include appearance(none);
   border: none;
   cursor: pointer;
+  text-transform: uppercase;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
+  width: 100%;
 }
