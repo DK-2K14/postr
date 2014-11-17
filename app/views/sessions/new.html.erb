@@ -1,8 +1,8 @@
 <%= form_for :session, url: session_path do |form| %>
   <div class="sign-up-container">
     <div>
-      <%= form.label :email %>
-      <%= form.email_field :email %>
+      <%= form.label :username %>
+      <%= form.text_field :username %>
     </div>
     <div>
       <%= form.label :password %>
@@ -11,5 +11,4 @@
     <div class="sign-in-button">
       <%= form.submit "Sign in" %>
     </div>
-  </div>
 <% end %>
