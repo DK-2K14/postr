@@ -2,8 +2,5 @@
 @import 'base/base';
 @import 'neat';
 
+@import 'base';
 @import 'signup';
-
-.container {
-  @include outer-container;
-}
