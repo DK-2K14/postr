@@ -12,15 +12,19 @@
   <main class="container">
     <header>
       <div class="header-logo">
-      Postr
+      <a href="../"><img src="/assets/logo.png"></a>
       </div>
       <div class="signed-in">
       <% if signed_in? %>
+        <%= link_to "New Post", new_post_path %>
+        <span class="sign-out-link">
         <%= link_to "Sign out", session_path, method: :delete %>
-        <%= link_to "Submit a new text post", new_post_path %> 
+        </span>
       <% else %>
         <%= link_to "Sign in", new_session_path %>
+        <span class="sign-up-link">
         <%= link_to "Sign up", new_user_path %>
+        </span>
 
       <% end %>
       </div>
