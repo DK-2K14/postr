@@ -2,6 +2,14 @@
   font-size: 1.5em;
 }
 .post-text {
-  color: darken($medium-gray,15%);
+  color: darken($medium-gray,35%);
   margin-top: 1em;
+}
+
+.comment-reply {
+  color: darken($medium-gray,35%);
+}
+
+.comments {
+  margin-left: 2em;
 }
