@@ -1,0 +1,3 @@
+<p><%= link_to post.title, post_path(post) %></p>
+<p>By: <%= post.username %>
+<p>Posted <%= time_ago_in_words(post.created_at)%> ago.</p>

@@ -5,19 +5,15 @@
 <p>Posted <%= time_ago_in_words(@post.created_at)%> ago. </p>
 
 <div>
-<%= form_for ([@post, @comment]) do |f| %>
-  <%= f.label :content, "Comment:" %>
-  <%= f.text_area :content %>
-  <%= f.submit %>
-<% end %>
+  <%= form_for ([@post, @comment]) do |f| %>
+    <%= f.label :content, "Comment:" %>
+    <%= f.text_area :content %>
+    <%= f.submit %>
+  <% end %>
 </div>
 
 <div>
-  <% @post.comments.each do |c| %>
-    <p><%= c.username %></p>
-    <p><%= time_ago_in_words(c.created_at) %> ago.</p>
-    <%= c.content %>
-  <% end %>
+  <%= render @post.comments.by_most_recent %>
 </div>
 
 <%= link_to "See All Posts", root_path %>
