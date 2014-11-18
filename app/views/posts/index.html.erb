@@ -1,9 +1,15 @@
 <div class="wrapper">
 
   <% @posts.each do |p| %>
-    <p><%= link_to p.title, post_path(p) %></p>
-    <p>By: <%= p.user.username %></p>
-    <p>Posted <%= time_ago_in_words(p.created_at)%> ago.</p>
+    <div class="post-container">
+      <div class="post-title">
+      <%= link_to p.title, post_path(p) %>
+      </div>
+      <div class="post-author">
+      posted by <span class="username"><%= p.user.username %></span>
+      <%= time_ago_in_words(p.created_at)%> ago.
+      </div>
+    </div>
   <% end %>
 
 </div>

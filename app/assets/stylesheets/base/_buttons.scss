@@ -3,10 +3,17 @@ input[type="submit"] {
   @extend %button;
   @include appearance(none);
   border: none;
+  border-bottom: solid 4px darken($light-blue,5%);
   cursor: pointer;
   text-transform: uppercase;
+  transition: all .5s ease-in-out;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap;
   width: 100%;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  border-bottom: solid 4px darken($light-blue,20%);
 }
