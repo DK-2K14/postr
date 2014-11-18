@@ -1,8 +1,10 @@
-<div>
+<div class="wrapper">
+
   <% @posts.each do |p| %>
     <p><%= link_to p.title, post_path(p) %></p>
     <p>By: <%= p.user.username %></p>
-    <p>Posted <%= time_ago_in_words(@post.created_at)%> ago.</p>
+    <p>Posted <%= time_ago_in_words(p.created_at)%> ago.</p>
   <% end %>
+
 </div>
 
