@@ -3,5 +3,15 @@
 <%= @post.text %>
 <p>By: <%= @post.user.username %></p>
 <p>Posted <%= time_ago_in_words(@post.created_at)%> ago. </p>
+
+<div>
+  <%= form_for ([@post, @comment]) do |f| %>
+  <%= f.label :content, "Comment:" %>
+  <%= f.text_area :content %>
+  <%= f.submit %>
+<% end %>
+</div>
+
+
 <%= link_to "See All Posts", root_path %>
 </div>
