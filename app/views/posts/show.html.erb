@@ -11,9 +11,7 @@
       <%= @post.text %>
     </div>
   </div>
-  <div>
-    <%= render @post.comments.by_most_recent %>
-  </div>
+
   <div class="comment-box">
     <%= form_for ([@post, @comment]) do |f| %>
       <%= f.label :content, "Comment:" %>
@@ -21,5 +19,14 @@
       <%= f.submit %>
     <% end %>
   </div>
+
+<div>
+  <%= link_to "UP", post_votes_path(@post), method: :post %>
+</div>
+
+<div>
+  <%= render @post.comments.by_most_recent %>
+</div>
+
 <%= link_to "See All Posts", root_path %>
 </div>
