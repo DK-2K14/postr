@@ -5,4 +5,8 @@ class Comment < ActiveRecord::Base
   def username
     user.username
   end
+
+  def self.by_most_recent
+    order(created_at: :desc)
+  end
 end
