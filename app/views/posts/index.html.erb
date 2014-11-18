@@ -2,9 +2,9 @@
 
   <% @posts.each do |p| %>
     <div class="post-container">
-      <div class="post-title">
+      <h1 class="post-title">
       <%= link_to p.title, post_path(p) %>
-      </div>
+      </h1>
       <div class="post-author">
       posted by <span class="username"><%= p.user.username %></span>
       <%= time_ago_in_words(p.created_at)%> ago.

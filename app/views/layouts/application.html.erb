@@ -12,19 +12,17 @@
   <main class="container">
     <header>
       <div class="header-logo">
-      <a href="../"><img src="/assets/logo.png"></a>
+        <%= link_to root_path do %>
+          <%= image_tag "logo.png" %>
+        <% end %>
       </div>
       <div class="signed-in">
       <% if signed_in? %>
-        <%= link_to "New Post", new_post_path %>
-        <span class="sign-out-link">
-        <%= link_to "Sign out", session_path, method: :delete %>
-        </span>
+        <%= link_to "New Post", new_post_path, class:"new-post-link" %>
+        <%= link_to "Sign out", session_path, method: :delete, class: "sign-out-link"%>
       <% else %>
-        <%= link_to "Sign in", new_session_path %>
-        <span class="sign-up-link">
-        <%= link_to "Sign up", new_user_path %>
-        </span>
+        <%= link_to "Sign in", new_session_path, class: "sign-in-link"%>
+        <%= link_to "Sign up", new_user_path, class: "sign-up-link"%>
 
       <% end %>
       </div>
