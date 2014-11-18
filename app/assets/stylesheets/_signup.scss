@@ -20,9 +20,6 @@
   margin-top: 2em;
   text-transform: uppercase;
 
-  a {
-    padding-right: 1.5em;
-  }
 }
 
 .sign-in-button {
@@ -36,17 +33,19 @@
 }
 
 .sign-up-link {
-  a {
     background-color: $light-blue;
     border-bottom: solid 4px darken($light-blue,5%);
     border-radius: 5px;
     color: #fff;
     padding: .5em;
     transition: all .5s ease-in-out;
-  }
+}
 
-  a:hover {
-    background-color: darken($light-blue,10%);
-    border-bottom: solid 4px darken($light-blue,15%);
-  }
+.sign-up-link:hover {
+  background-color: darken($light-blue,10%);
+  border-bottom: solid 4px darken($light-blue,15%);
+}
+
+.sign-in-link, .new-post-link {
+  padding-right: 2em;
 }
