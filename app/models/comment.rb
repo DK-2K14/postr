@@ -1,6 +1,6 @@
-class Post < ActiveRecord::Base
+class Comment < ActiveRecord::Base
+  belongs_to :image
   belongs_to :user
-  has_many :comments
 
   def username
     user.username
