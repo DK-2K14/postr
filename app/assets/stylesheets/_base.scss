@@ -2,7 +2,8 @@
   @include outer-container;
 }
 
-.clearfix {
+.wrapper {
+  @include clearfix;
   clear: both;
 }
 
