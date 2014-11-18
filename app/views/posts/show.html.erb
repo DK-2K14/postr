@@ -11,18 +11,15 @@
       <%= @post.text %>
     </div>
   </div>
-
-<div>
-  <%= render @post.comments.by_most_recent %>
-</div>
-
-<div>
-  <%= form_for ([@post, @comment]) do |f| %>
-    <%= f.label :content, "Comment:" %>
-    <%= f.text_area :content %>
-    <%= f.submit %>
-  <% end %>
-</div>
-
+  <div>
+    <%= render @post.comments.by_most_recent %>
+  </div>
+  <div>
+    <%= form_for ([@post, @comment]) do |f| %>
+      <%= f.label :content, "Comment:" %>
+      <%= f.text_area :content %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 <%= link_to "See All Posts", root_path %>
 </div>
