@@ -1,0 +1,40 @@
+.post-title {
+  font-size: 1.4em;
+
+  a {
+    color: $light-blue;
+    transition: all .5s ease-in-out;
+  }
+
+  a:hover {
+    color: darken($light-blue, 20%)
+  }
+}
+
+.post-author {
+  color: $medium-gray;
+  text-transform: lowercase;
+}
+
+.post-container {
+  background-color: $light-gray;
+  border-bottom: 4px solid darken($light-gray, 5%);
+  border-radius: 5px;
+  margin-bottom: 1em;
+  padding: 1em 1em 1em 1em;
+}
+
+.username {
+  color: darken($medium-gray,20%);
+}
+
+.sign-out-link {
+  a {
+    color: lighten($medium-gray,10%);
+    font-size: .7em;
+  }
+
+  a:last-child {
+    padding-right: 0;
+  }
+}
