@@ -14,10 +14,10 @@
   <div>
     <%= render @post.comments.by_most_recent %>
   </div>
-  <div>
+  <div class="comment-box">
     <%= form_for ([@post, @comment]) do |f| %>
       <%= f.label :content, "Comment:" %>
-      <%= f.text_area :content %>
+      <%= f.text_area :content, class: "comment-box-text-area" %>
       <%= f.submit %>
     <% end %>
   </div>

@@ -44,6 +44,7 @@
 .sign-up-link:hover {
   background-color: darken($light-blue,10%);
   border-bottom: solid 4px darken($light-blue,15%);
+  color: #fff;
 }
 
 .sign-in-link, .new-post-link {

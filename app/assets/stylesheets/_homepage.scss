@@ -4,6 +4,7 @@
   a {
     color: $light-blue;
     transition: all .5s ease-in-out;
+    word-wrap: break-word;
   }
 
   a:hover {
