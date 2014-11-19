@@ -12,11 +12,11 @@ class Post < ActiveRecord::Base
   end
 
   def up_votes
-    votes.where(:up => true).count
+    votes.where(up: true).count
   end
 
   def down_votes
-    votes.where(:up => false).count
+    votes.where(up: false).count
   end
 
   def total_votes
