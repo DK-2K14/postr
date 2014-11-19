@@ -1,10 +1,15 @@
 <div class="post-container">
   <div class="post-title">
       <%= link_to post.title, post_path(post) %>
-      </div>
-      <div class="post-author">
+  </div>
+  <div class="post-author">
       posted by <span class="username"><%= post.user.username %></span>
       <%= time_ago_in_words(post.created_at)%> ago.
+  </div>
+  <div>
+    <%= link_to "up", post_upvotes_path(post), method: :post %>
+    <p>Votes: <%= post.total_votes %> </p>
+    <%= link_to "down", post_downvotes_path(post), method: :post %>
   </div>
 </div>
 

@@ -10,4 +10,16 @@ class Post < ActiveRecord::Base
   def self.by_most_recent
     order(created_at: :desc)
   end
+
+  def up_votes
+    votes.where(:up => true).count
+  end
+
+  def down_votes
+    votes.where(:up => false).count
+  end
+
+  def total_votes
+    up_votes - down_votes
+  end
 end

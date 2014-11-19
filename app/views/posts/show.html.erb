@@ -20,14 +20,15 @@
     <% end %>
   </div>
 
-<div>
-  <%= link_to "UP", votes_path(:vote => {:post_id => @post.id, :user_id => current_user, :up => true}), method: :post %>
-  <%= link_to "DOWN", votes_path(:vote => {:post_id => @post.id, :user_id=> current_user, :up => false}), method: :post %>
-</div>
+  <div>
+    <%= link_to "up", post_upvotes_path(@post), method: :post %>
+    <p>Votes: <%= @post.total_votes %></p>
+    <%= link_to "down", post_downvotes_path(@post), method: :post %>
+  </div>
 
 <div>
   <%= render @post.comments.by_most_recent %>
 </div>
 
-<%= link_to "See All Posts", root_path %>
+  <%= link_to "See All Posts", root_path %>
 </div>
