@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:new, :create, :index, :show] do 
     resources :comments, only: [:create]
+    resources :upvotes, only: [:create]
+    resources :downvotes, only: [:create]
   end
 
   root "posts#index"
