@@ -6,13 +6,13 @@ class User < ActiveRecord::Base
   has_many :votes
 
   def upvote(post)
-    vote = self.votes.find_or_create_by(post: post)
+    vote = votes.find_or_create_by(post: post)
     vote.up = true
     vote.save
   end
 
   def downvote(post)
-    vote = self.votes.find_or_create_by(post: post)
+    vote = votes.find_or_create_by(post: post)
     vote.up = false
     vote.save
   end
