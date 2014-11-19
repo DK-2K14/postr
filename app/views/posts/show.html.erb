@@ -21,7 +21,8 @@
   </div>
 
 <div>
-  <%= link_to "UP", post_votes_path(@post), method: :post %>
+  <%= link_to "UP", votes_path(:vote => {:post_id => @post.id, :user_id => current_user, :up => true}), method: :post %>
+  <%= link_to "DOWN", votes_path(:vote => {:post_id => @post.id, :user_id=> current_user, :up => false}), method: :post %>
 </div>
 
 <div>

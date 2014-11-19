@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:new, :create, :index, :show] do 
     resources :comments, only: [:create]
-    resources :votes, only: [:create, :destroy]
   end
+
+  resources :votes, only: [:create, :update, :destroy]
 
   root "posts#index"
 end
