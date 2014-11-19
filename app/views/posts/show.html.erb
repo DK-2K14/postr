@@ -1,21 +1,27 @@
 <div class="wrapper">
   <div class="post-details-container">
+
     <div class="voting">
-    <%= link_to post_upvotes_path(@post), method: :post do %>
-      <%= image_tag "up-arrow.png" %>
-    <% end %>
+      <%= link_to post_upvotes_path(@post), method: :post do %>
+        <%= image_tag "up-arrow.png" %>
+      <% end %>
+
       <div class="total-votes"><%= @post.total_votes %></div>
-    <%= link_to post_downvotes_path(@post), method: :post do %>
-      <%= image_tag "down-arrow.png" %>
-    <% end %>
+
+      <%= link_to post_downvotes_path(@post), method: :post do %>
+        <%= image_tag "down-arrow.png" %>
+      <% end %>
     </div>
+
     <h1 class="post-details-title">
       <%= @post.title %>
     </h1>
+
     <div class="post-details-author">
       posted by <span class="username"><%= @post.user.username %></span>
       <%= time_ago_in_words(@post.created_at)%> ago.
     </div>
+
     <div class="post-text">
       <%= @post.text %>
     </div>
@@ -29,9 +35,11 @@
     <% end %>
   </div>
 
-<div>
-  <%= render @post.comments.by_most_recent %>
-</div>
+  <div>
+    <p> <%= pluralize(@post.comments.count, "comment") %></p>
+    <%= render @post.comments.by_most_recent %>
+  </div>
 
   <%= link_to "See All Posts", root_path %>
+</div>
 

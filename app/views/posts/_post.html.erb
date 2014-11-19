@@ -1,20 +1,28 @@
 <div class="post-container">
   <div class="voting">
+
     <%= link_to post_upvotes_path(post), method: :post do %>
       <%= image_tag "up-arrow.png" %>
     <% end %>
+
       <div class="total-votes"><%= post.total_votes %></div>
+
     <%= link_to post_downvotes_path(post), method: :post do %>
       <%= image_tag "down-arrow.png" %>
     <% end %>
+
   </div>
+
   <div class="post-title">
-      <%= link_to post.title, post_path(post) %>
+    <%= link_to post.title, post_path(post) %>
   </div>
+
   <div class="post-author">
       posted by <span class="username"><%= post.user.username %></span>
-      <%= time_ago_in_words(post.created_at)%> ago.
+    <%= time_ago_in_words(post.created_at)%> ago.
   </div>
+
+  <%= link_to pluralize(post.comments.count, "comment"), post_path(post) %>
 </div>
 
 
