@@ -1,11 +1,11 @@
 <div class="wrapper new-post">
-<%= form_for @post do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= form_for @post do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
 
-  <%= f.label :text %>
-  <%= f.text_area :text %>
+    <%= f.label :text %>
+    <%= f.text_area :text, class: "new-post-text" %>
 
-  <%= f.submit %>
-<% end %>
+    <%= f.submit %>
+  <% end %>
 </div>

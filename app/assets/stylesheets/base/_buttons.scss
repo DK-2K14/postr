@@ -17,3 +17,7 @@ button:hover,
 input[type="submit"]:hover {
   border-bottom: solid 4px darken($light-blue,20%);
 }
+
+.submit-comment {
+  width: 50%;
+}

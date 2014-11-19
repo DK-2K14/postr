@@ -1,7 +1,22 @@
 .post-details-title{
   font-size: 1.5em;
 }
+
 .post-text {
-  color: darken($medium-gray,15%);
+  color: darken($medium-gray,35%);
   margin-top: 1em;
+}
+
+.comment-reply {
+  color: darken($medium-gray,35%);
+  margin-top: 1em;
+}
+
+.comments {
+  margin-left: 2em;
+}
+
+.new-post {
+  width: 70%;
+  margin: 0 auto;
 }
