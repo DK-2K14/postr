@@ -18,7 +18,8 @@
       </div>
       <div class="signed-in">
       <% if signed_in? %>
-        <%= link_to "New Post", new_post_path, class:"new-post-link" %>
+        <%= link_to "New Text Post", new_text_post_path, class:"new-post-link" %>
+        <%= link_to "New Link Post", new_link_post_path, class:"new-post-link" %>
         <%= link_to "Sign out", session_path, method: :delete, class: "sign-out-link"%>
       <% else %>
         <%= link_to "Sign in", new_session_path, class: "sign-in-link"%>

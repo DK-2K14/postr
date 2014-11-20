@@ -1,7 +1,10 @@
 class Post < ActiveRecord::Base
-  belongs_to :user
   has_many :comments
   has_many :votes
+  belongs_to :content, polymorphic: true
+  belongs_to :user
+
+  validates :content_id, presence: true
 
   def username
     user.username

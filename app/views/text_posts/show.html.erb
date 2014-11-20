@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <div class="post-container">
+    <h1 class="post-details-title">
+      <%= @text_post.title %>
+    </h1>
+    <div class="post-author">
+      posted by <span class="username"><%= @text_post.post.username %></span>
+      <%= time_ago_in_words(@text_post.created_at)%> ago.
+    </div>
+    <div class="post-text">
+      <%= @text_post.text %>
+    </div>
+  </div>
+
+  <div class="comment-box">
+    <%= form_for ([@text_post.post, @comment]) do |f| %>
+      <%= f.label :content, "Comment:" %>
+      <%= f.text_area :content, class: "comment-box-text-area" %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= link_to "up", post_upvotes_path(@text_post.post), method: :post %>
+    <p>Votes: <%= @text_post.post.total_votes %></p>
+    <%= link_to "down", post_downvotes_path(@text_post.post), method: :post %>
+  </div>
+
+<div>
+  <%= render @text_post.comments.by_most_recent %>
+</div>
+
+  <%= link_to "See All Posts", root_path %>
+</div>
