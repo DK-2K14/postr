@@ -14,13 +14,6 @@ class CommentsController < ApplicationController
 
   private
 
-  def require_login
-    unless logged_in?
-      flash[:error] = "You must be logged in to comment!"
-      redirect_to :back
-    end
-  end
-
   def comment_params
     params.require(:comment).permit(:content).merge(user: current_user)
   end

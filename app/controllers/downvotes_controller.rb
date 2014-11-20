@@ -7,12 +7,4 @@ class DownvotesController < ApplicationController
     redirect_to :back
   end
 
-  private
-
-  def require_login
-    unless logged_in?
-      flash[:error] = "You must be logged in to vote!"
-      redirect_to :back
-    end
-  end
 end
