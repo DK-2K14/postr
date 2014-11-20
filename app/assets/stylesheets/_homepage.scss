@@ -12,17 +12,10 @@
   }
 }
 
-.post-author {
+.post-author, .post-details-author {
+  @include clearfix;
   color: $medium-gray;
   text-transform: lowercase;
-}
-
-.post-container {
-  background-color: $light-gray;
-  border-bottom: 4px solid darken($light-gray, 5%);
-  border-radius: 5px;
-  margin-bottom: 1em;
-  padding: 1em 1em 1em 1em;
 }
 
 .username {
@@ -36,4 +29,9 @@
 
 .sign-out-link:last-child {
   padding-right: 0;
+}
+
+.total-votes {
+  font-size: 1.2em;
+  margin-bottom: .3em;
 }

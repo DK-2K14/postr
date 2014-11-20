@@ -4,6 +4,7 @@
 
 .post-text {
   color: darken($medium-gray,35%);
+  font-size: 1.1em;
   margin-top: 1em;
 }
 
@@ -13,10 +14,40 @@
 }
 
 .comments {
-  margin-left: 2em;
+  padding-left: 4em;
+}
+
+.comment-box {
+  width: 60%;
+  margin: 0 auto;
 }
 
 .new-post {
-  width: 70%;
   margin: 0 auto;
+  width: 70%;
+}
+
+.voting {
+  float: left;
+  margin: 0 auto;
+  padding-right: 2em;
+  text-align: center;
+}
+
+.post-container, .post-comment-container, .post-details-container {
+  background-color: $light-gray;
+  border-bottom: 4px solid darken($light-gray, 5%);
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.post-details-container, .post-comment-container {
+  padding: 2em;
+  width: 60%;
+}
+
+.post-details-author {
+  padding-left: 3.3em;
 }
