@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.new(comment_params)
 
     if @comment.save
-      redirect_to @post
+      redirect_to @post.content
     else
       render "posts/show"
     end

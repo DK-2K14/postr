@@ -16,4 +16,8 @@ class User < ActiveRecord::Base
     vote.up = false
     vote.save
   end
+
+  def owns?(record)
+    self.id == record.user.id
+  end
 end

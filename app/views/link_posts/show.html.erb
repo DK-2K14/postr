@@ -1,12 +1,29 @@
 <div class="wrapper">
-  <div class="post-container">
+  <div class="post-details-container">
+    <div class="voting">
+    <%= link_to post_upvotes_path(@link_post.post), method: :post  do %>
+      <%= image_tag "up-arrow.png" %>
+    <% end %>
+
+    <div class="total-votes"><%= @link_post.post.total_votes %></div>
+    <%= link_to post_downvotes_path(@link_post.post), method: :post do %>
+      <%= image_tag "down-arrow.png" %>
+    <% end %>
+  </div>
+
     <h1 class="post-details-title">
       <a href="<%= @link_post.url %>"><%= @link_post.url %></a>
     </h1>
-    <div class="post-author">
+
+    <div class="post-details-author">
       posted by <span class="username"><%= @link_post.post.username %></span>
       <%= time_ago_in_words(@link_post.created_at)%> ago.
-    </div>
+      <div>
+        <% if current_user.owns?(@link_post.post) %>
+          <%= link_to "Edit", edit_link_post_path(@link_post) %>
+          <%= link_to "Delete", link_post_path(@link_post), method: :delete %>
+        <% end %>
+      </div>
   </div>
 
   <div class="comment-box">
@@ -18,14 +35,8 @@
   </div>
 
   <div>
-    <%= link_to "up", post_upvotes_path(@link_post.post), method: :post %>
-    <p>Votes: <%= @link_post.post.total_votes %></p>
-    <%= link_to "down", post_downvotes_path(@link_post.post), method: :post %>
+    <%= render @link_post.comments.by_most_recent %>
   </div>
-
-<div>
-  <%= render @link_post.comments.by_most_recent %>
-</div>
 
   <%= link_to "See All Posts", root_path %>
 </div>

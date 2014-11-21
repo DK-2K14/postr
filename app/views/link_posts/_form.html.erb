@@ -1,0 +1,8 @@
+<div class="wrapper new-post">
+  <%= form_for link_post do |f| %>
+    <%= f.label :url, "Link" %>
+    <%= f.text_field :url %>
+
+    <%= f.submit %>
+  <% end %>
+</div>

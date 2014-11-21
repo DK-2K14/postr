@@ -12,8 +12,8 @@ Rails.application.routes.draw do
     resources :downvotes, only: [:create]
   end
 
-  resources :text_posts, only: [:new, :create, :index, :show]
-  resources :link_posts, only: [:new, :create, :index, :show]
+  resources :text_posts, only: [:new, :create, :show, :edit, :update, :destroy]
+  resources :link_posts, only: [:new, :create, :show, :edit, :update, :destroy]
 
   constraints Monban::Constraints::SignedIn.new do
     root "dashboards#show", as: :dashboard
