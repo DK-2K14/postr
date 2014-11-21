@@ -1,12 +1,31 @@
 <div class="wrapper">
-  <div class="post-container">
+  <div class="post-details-container">
+    <div class="voting">
+    <%= link_to post_upvotes_path(@text_post.post), method: :post do %>
+      <%= image_tag "up-arrow.png" %>
+    <% end %>
+
+    <div class="total-votes"><%= @text_post.post.total_votes %></div>
+    <%= link_to post_upvotes_path(@text_post.post), method: :post do %>
+      <%= image_tag "down-arrow.png" %>
+    <% end %>
+    </div>
+
     <h1 class="post-details-title">
       <%= @text_post.title %>
     </h1>
-    <div class="post-author">
+
+    <div class="post-details-author">
       posted by <span class="username"><%= @text_post.post.username %></span>
       <%= time_ago_in_words(@text_post.created_at)%> ago.
+      <div>
+        <% if current_user.owns?(@text_post.post) %>
+          <%= link_to "Edit", edit_text_post_path(@text_post) %>
+          <%= link_to "Delete", text_post_path(@text_post), method: :delete %>
+        <% end %>
+      </div>
     </div>
+
     <div class="post-text">
       <%= @text_post.text %>
     </div>
@@ -18,12 +37,6 @@
       <%= f.text_area :content, class: "comment-box-text-area" %>
       <%= f.submit %>
     <% end %>
-  </div>
-
-  <div>
-    <%= link_to "up", post_upvotes_path(@text_post.post), method: :post %>
-    <p>Votes: <%= @text_post.post.total_votes %></p>
-    <%= link_to "down", post_downvotes_path(@text_post.post), method: :post %>
   </div>
 
 <div>
