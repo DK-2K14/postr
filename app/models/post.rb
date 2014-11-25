@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
-  has_many :comments
   has_many :votes
+  has_many :comments
   belongs_to :content, polymorphic: true
   belongs_to :user
 
