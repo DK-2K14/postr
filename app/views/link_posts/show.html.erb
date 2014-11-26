@@ -12,7 +12,7 @@
   </div>
 
     <h1 class="post-details-title">
-      <a href="<%= @link_post.url %>"><%= @link_post.url %></a>
+      <a href="<%= @link_post.url %>"><%= @link_post.title %></a>
     </h1>
 
     <div class="post-details-author">
@@ -24,7 +24,11 @@
           <%= link_to "Delete", link_post_path(@link_post), method: :delete %>
         <% end %>
       </div>
-  </div>
+    </div>
+
+    <div class="post-text">
+      <a href="<%= @link_post.url %>"><%= @link_post.url %></a>
+    </div>
 
   <div class="comment-box">
     <%= form_for ([@link_post.post, @comment]) do |f| %>
@@ -38,5 +42,5 @@
     <%= render @link_post.comments.by_most_recent %>
   </div>
 
-  <%= link_to "See All Posts", root_path %>
+  <div class="all-post"><%= link_to "See All Posts", root_path %></div>
 </div>

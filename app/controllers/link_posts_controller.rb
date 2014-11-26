@@ -7,6 +7,9 @@ class LinkPostsController < ApplicationController
 
   def create
     link_post = LinkPost.new(link_post_params)
+    unless link_post.title
+      link_post.title = link_post.url
+    end
 
     if link_post.save
       current_user.posts.create(content: link_post)
@@ -44,7 +47,7 @@ class LinkPostsController < ApplicationController
   private
 
   def link_post_params
-    params.require(:link_post).permit(:url)
+    params.require(:link_post).permit(:title, :url)
   end
 
   def require_owner
