@@ -1,14 +1,18 @@
 class CommentsController < ApplicationController
   before_action :require_login
 
+  def new
+    @comment = Comment.find(params[:comment_id])
+  end
+
   def create
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.new(comment_params)
+    @commentable = find_commentable
+    @comment = @commentable.comments.build(comment_params)
 
     if @comment.save
-      redirect_to @post.content
+      redirect_to root_path
     else
-      render "posts/show"
+      render :back
     end
   end
 
@@ -16,5 +20,13 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:content).merge(user: current_user)
+  end
+
+  def find_commentable
+    params.each do |name, value|
+      if name =~ /(.+)_id$/
+        return $1.classify.constantize.find(value) unless name == "user_id"
+      end
+    end
   end
 end

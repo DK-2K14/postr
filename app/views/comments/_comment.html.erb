@@ -6,5 +6,9 @@
   <div class="comment-reply">
     <%= comment.content %>
   </div>
-</div>
 
+  <%= link_to "Reply", new_comment_comment_path(comment) %>
+
+  <div>
+    <%= render comment.comments.by_most_recent %>
+  </div>
