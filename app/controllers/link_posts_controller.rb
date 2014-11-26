@@ -7,9 +7,7 @@ class LinkPostsController < ApplicationController
 
   def create
     link_post = LinkPost.new(link_post_params)
-    unless link_post.title
-      link_post.title = link_post.url
-    end
+    link_post.title ||= link_post.url
 
     if link_post.save
       current_user.posts.create(content: link_post)

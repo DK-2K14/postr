@@ -29,6 +29,7 @@
     <div class="post-text">
       <a href="<%= @link_post.url %>"><%= @link_post.url %></a>
     </div>
+  </div>
 
   <div class="comment-box">
     <%= form_for ([@link_post.post, @comment]) do |f| %>
@@ -38,9 +39,9 @@
     <% end %>
   </div>
 
-  <div>
-    <%= render @link_post.comments.by_most_recent %>
-  </div>
+<div>
+  <%= render @link_post.comments.by_most_recent %>
+</div>
 
   <div class="all-post"><%= link_to "See All Posts", root_path %></div>
 </div>
