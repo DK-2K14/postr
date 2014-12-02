@@ -18,12 +18,10 @@
     <div class="post-details-author">
       posted by <span class="username"><%= @text_post.post.username %></span>
       <%= time_ago_in_words(@text_post.created_at)%> ago.
-      <div>
         <% if current_user.owns?(@text_post.post) %>
-          <%= link_to "Edit", edit_text_post_path(@text_post) %>
+          <%= link_to "Edit", edit_text_post_path(@text_post), class: "edit-content" %>
           <%= link_to "Delete", text_post_path(@text_post), method: :delete %>
         <% end %>
-      </div>
     </div>
 
     <div class="post-text">
