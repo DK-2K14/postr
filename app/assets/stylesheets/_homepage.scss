@@ -1,5 +1,5 @@
 .post-title {
-  font-size: 1.4em;
+  font-size: 1.3em;
 
   a {
     color: $light-blue;
@@ -19,7 +19,7 @@
 }
 
 .username {
-  color: lighten($light-blue,20%);
+  color: darken($medium-gray,20%);
 }
 
 .sign-out-link {
